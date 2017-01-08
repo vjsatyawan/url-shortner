@@ -5,11 +5,11 @@ var mongoose = require('mongoose');
 
 
 app.set('port', (process.env.PORT || 5000));
-app.set('MONGOLAB_URI', (process.env.MONGOLAB_URI || 'mongodb://dbuser:dbpass@ds157278.mlab.com:57278/url'));
+//app.set('MONGOLAB_URI', (process.env.MONGOLAB_URI || 'mongodb://dbuser:dbpass@ds157278.mlab.com:57278/url'));
 
 
-mongoose.Promise = global.Promise;
-var url = process.env.MONGOLAB_URI;
+//mongoose.Promise = global.Promise;
+//var url = process.env.MONGOLAB_URI;
 
 
 // views is directory for all template files
@@ -22,7 +22,7 @@ var url = require('./routes/url.js');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
-  response.render('pages/index');
+    response.redirect('/url');
 });
 
 
